@@ -3,24 +3,50 @@
         <h3>请注册</h3>
     </div>
     <div class="panel-body">
-        <form ng-submit="User.signup();">
+        <form name="signup" ng-submit="User.signup();">
             <div class="form-group">
                 <label for="">用户名：</label>
                 [[User.signup_data]];
-                <input type="text" class="form-control" placeholder="请输入用户名"
-                       ng-model="User.signup_data.username">
+                <input name="username"
+                       type="text"
+                       class="form-control"
+                       placeholder="请输入用户名"
+                       ng-model="User.signup_data.username"
+                       ng-minlength="4"
+                       ng-maxlength="64"
+                       required>
+            </div>
+            <div class="has-error"
+                 ng-if="signup.username.$error.required
+                        &signup.username.$touched">
+                用户名为必填项
             </div>
             <div class="form-group">
                 <label for="">密码：</label>
-                <input type="password" class="form-control" placeholder="请输入密码"
-                        ng-model="User.signup_data.password">
+                <input name="password"
+                       type="password"
+                       class="form-control"
+                       placeholder="请输入密码"
+                       ng-model="User.signup_data.password"
+                       ng-minlength="6"
+                       ng-maxlength="128"
+                       required>
+            </div>
+            <div class="has-error"
+                    ng-if="signup.password.$error.required
+                            &&signup.password.$touched">
+                密码不能为空
             </div>
             <div class="form-group">
                 <label for="">确认密码：</label>
                 <input type="password" class="form-control" placeholder="请再次输入密码">
             </div>
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary">注册</button>
+                <button type="submit"
+                        class="btn btn-primary"
+                        ng-disabled="signup.$invalid">
+                    注册
+                </button>
             </div>
         </form>
     </div>

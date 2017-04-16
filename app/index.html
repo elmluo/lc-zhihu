@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="zhihuApp">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- 在这里添加你的站点或应用内容 -->
+<div class="header">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#js-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#/">知乎</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="js-navbar-collapse">
+                <form class="nav nav-bar navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a ui-sref="home">首页</a></li>
+                    <li><a ui-sref="signup">注册</a></li>
+                    <li><a ui-sref="login">登录</a></li>
+                    <li><a ui-sref="connect">联系</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!--<div ng-view=""></div>-->
+    <div ui-view=""></div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> 超哥哥</p>
+    </div>
+</div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                (A[l].q = A[l].q || []).push(arguments)
+            }, A[l].l = +new Date, a = n.createElement(g),
+            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!--开发环境中，服务器实在app目录下，所以只能获取app目录下的静态资源，不是app之外的都获取不到,IDE也无法对拖动等修改路径，进行自行关联-->
+<script src="public/angular/angular.js"></script>
+<script src="public/angular-mocks/angular-mocks.js"></script>
+<script src="public/angular-animate/angular-animate.js"></script>
+<!--<script src="public/angular-route/angular-route.js"></script>-->
+<script src="public/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="public/angular-aria/angular-aria.js"></script>
+<script src="public/angular-cookies/angular-cookies.js"></script>
+<script src="public/angular-messages/angular-messages.js"></script>
+<script src="public/angular-resource/angular-resource.js"></script>
+<script src="public/angular-sanitize/angular-sanitize.js"></script>
+<script src="public/angular-touch/angular-touch.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp, app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<!-- endbuild -->
+</body>
+</html>

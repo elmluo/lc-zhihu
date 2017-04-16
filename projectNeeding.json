@@ -1,0 +1,12 @@
+前端
+//    1.安装模块和需要的公共资源库,angular.js angular-ui-router
+//    2.创建ng-app=”zhihuApp“ angular.module('zhihuApp',['依赖注入需要的模块','','','ui.router'])
+    3.ui.router实现路由：
+        $urlRouterProvider.otherwise('/home')。默认加载路由，
+        $stateProvider.state('home',{ //给ui-sref链接使用
+            url: '/home',
+            templateUrl:'',
+            template: '',
+            controller：'XxxController'
+        });
+

@@ -1,0 +1,27 @@
+<div class="panel">
+    <div class="panel-heading text-center">
+        <h3>请注册</h3>
+    </div>
+    <div class="panel-body">
+        <form ng-submit="User.signup();">
+            <div class="form-group">
+                <label for="">用户名：</label>
+                [[User.signup_data]];
+                <input type="text" class="form-control" placeholder="请输入用户名"
+                       ng-model="User.signup_data.username">
+            </div>
+            <div class="form-group">
+                <label for="">密码：</label>
+                <input type="password" class="form-control" placeholder="请输入密码"
+                        ng-model="User.signup_data.password">
+            </div>
+            <div class="form-group">
+                <label for="">确认密码：</label>
+                <input type="password" class="form-control" placeholder="请再次输入密码">
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">注册</button>
+            </div>
+        </form>
+    </div>
+</div>
